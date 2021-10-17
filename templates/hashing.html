@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Hashing{% endblock %}
+{% block content %}
+  <h1>Hashing</h1>
+  <form action="#" method="POST" target="response">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="algRadio" id="md5" value="md5" checked>
+      <label class="form-check-label" for="md5">
+        MD5
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="algRadio" id="sha256" value="sha256">
+      <label class="form-check-label" for="sha256">
+        SHA-256
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="algRadio" id="sha512" value="sha512">
+      <label class="form-check-label" for="sha512">
+        SHA-512
+      </label>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="dataLabel">Data</span>
+      <input type="text" class="form-control" placeholder="Insert data" id="data" name="data">
+    </div>
+    <button type="submit" class="btn btn-primary">Generate</button>
+  </form>
+  <iframe name="response" onload="this.width=screen.width"></iframe>
+{% endblock %}
